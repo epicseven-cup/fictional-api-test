@@ -4,23 +4,22 @@
 import yaml
 import pprint
 
-def create_get_routes(end):
-
+def create_get_routes(end, respond):
     return (f"@app.get('{end}')\n"
             f"def respond_get_{end.replace("/", "")}():\n"
-            f"\treturn 'Get Rounte {end} was hit'")
-def create_post_routes(end):
+            f"\t{respond}")
+def create_post_routes(end, respond):
     return (f"@app.post({end.replace("/", "")})()\n"
             f"def respond_post_{end}:\n"
-            f"\treturn 'Post Rounte {end} was hit'")
-def create_put_routes(end):
+            f"\t{respond}")
+def create_put_routes(end, respond):
     return (f"@app.put({end})\n"
             f"def respond_put_{end.replace("/", "")}():\n"
-            f"\treturn 'Put Route {end} was hit'")
-def create_delete_routes(end):
+            f"\t{respond}")
+def create_delete_routes(end, respond):
     return (f"@app.delete({end})\n"
             f"def respond_delete_{end.replace("/", "")}():\n"
-            f"\treturn 'Delete Route {end} was hit'")
+            f"\t{respond}")
 
 
 path = "openapi.yaml"

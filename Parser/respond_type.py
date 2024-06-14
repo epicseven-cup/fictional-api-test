@@ -11,8 +11,8 @@ class RespondType(StrEnum):
 	pass
 
 # Transform respond
-def transform(respond_type:RespondType, ub_respond:str) -> str:
-	match respond_type:
+def transform_respond(respond_type:RespondType, ub_respond:str) -> str:
+	match respond_type.name:
 		case "text_html":
 			# Since htmls can already be written in strings returning the string will be just fine
 			return ub_respond
@@ -21,4 +21,4 @@ def transform(respond_type:RespondType, ub_respond:str) -> str:
 		case "text_xml":
 			return ub_respond
 		case "application_json":
-			return f"json.loads({ub_respond})"
+			return f"json.loads({ub_respond})\n"
