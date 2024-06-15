@@ -8,5 +8,15 @@ compiles yaml to a simple flask application with custom / default respond
 
 Run script.py for a quick demo, the output file is in output/app.py
 
-yapf.config is used to configure coding style begin output by the compiler
+yapf.config is used to configure coding style being output by the compiler
 test.yaml is being used for testing
+
+
+Currently support these default format:
+    - application_json
+    - text_html
+    - text_plain
+    - text_xml
+
+custom return respond:
+- respond/{self.path}.{self.request_type}.{self.respond_type}.ub"
