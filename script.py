@@ -1,5 +1,6 @@
-from Parser.parser import Parser
+from Parser.compiler import Compiler
+
 path = "./test.yaml"
 content = open(path).read()
-parser = Parser(content)
+parser = Compiler(content)
 parser.render()

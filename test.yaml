@@ -1,9 +1,8 @@
 paths:
     /hello_world:
         get:
-            200:
-                respond: text/plain
+            respond: text/plain
     /test:
         put:
-            201:
-                respond: application/json
+            status: 201
+            respond: application/json
